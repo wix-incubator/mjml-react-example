@@ -1,0 +1,31 @@
+{
+  "name": "mjml-react-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "build:watch": "babel src --out-dir dist --watch",
+    "prestart": "npm run build",
+    "start": "npm run build:watch & nodemon ./dist/server.js --watch ./dist"
+  },
+  "author": {
+    "name": "Mantas Miliukas",
+    "email": "mantasm@wix.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mjml": "^4.3.1",
+    "mjml-react": "^1.0.45",
+    "nodemon": "^1.18.9",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
