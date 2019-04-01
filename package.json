@@ -7,7 +7,8 @@
     "build": "babel src --out-dir dist",
     "build:watch": "babel src --out-dir dist --watch",
     "prestart": "npm run build",
-    "start": "npm run build:watch & nodemon ./dist/server.js --watch ./dist"
+    "start": "npm run build:watch & nodemon ./dist/server.js --watch ./dist",
+    "generate": "node ./dist/cli.js"
   },
   "author": {
     "name": "Mantas Miliukas",
