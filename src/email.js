@@ -9,7 +9,9 @@ import {
   MjmlSection,
   MjmlColumn,
   MjmlButton,
-  MjmlImage
+  MjmlImage,
+  MjmlStyle,
+  MjmlText
 } from 'mjml-react';
 
 export const generate = () => {
@@ -18,6 +20,16 @@ export const generate = () => {
       <MjmlHead>
         <MjmlTitle>Last Minute Offer</MjmlTitle>
         <MjmlPreview>Last Minute Offer...</MjmlPreview>
+        <MjmlStyle>{`
+          .blue-column {
+            background-color: blue;
+          }
+        `}</MjmlStyle>
+        <MjmlStyle inline>{`
+          .red-column {
+            background-color: red;
+          }
+        `}</MjmlStyle>
       </MjmlHead>
       <MjmlBody width={500}>
         <MjmlSection fullWidth backgroundColor="#efefef">
@@ -27,13 +39,17 @@ export const generate = () => {
         </MjmlSection>
         <MjmlSection>
           <MjmlColumn>
-            <MjmlButton
-              padding="20px"
-              backgroundColor="#346DB7"
-              href="https://www.wix.com/"
-            >
+            <MjmlButton padding="20px" backgroundColor="#346DB7" href="https://www.wix.com/">
               I like it!
             </MjmlButton>
+          </MjmlColumn>
+        </MjmlSection>
+        <MjmlSection>
+          <MjmlColumn cssClass="blue-column">
+            <MjmlText>I am blue</MjmlText>
+          </MjmlColumn>
+          <MjmlColumn cssClass="red-column">
+            <MjmlText>I am red</MjmlText>
           </MjmlColumn>
         </MjmlSection>
       </MjmlBody>
