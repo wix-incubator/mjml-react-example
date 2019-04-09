@@ -1,4 +1,5 @@
 import React from 'react';
+import { readFileSync } from 'fs';
 
 import {
   Mjml,
@@ -14,12 +15,15 @@ import {
   MjmlText
 } from 'mjml-react';
 
+const css = readFileSync('./assets/styles.css').toString();
+
 export const generate = () => {
   return (
     <Mjml>
       <MjmlHead>
         <MjmlTitle>Last Minute Offer</MjmlTitle>
         <MjmlPreview>Last Minute Offer...</MjmlPreview>
+        <MjmlStyle>{css}</MjmlStyle>
         <MjmlStyle>{`
           .blue-column {
             background-color: blue;
